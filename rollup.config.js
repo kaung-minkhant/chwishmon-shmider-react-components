@@ -27,16 +27,19 @@ const moduleOptions = {
     commonjs(),
     typescript({ tsconfig: "./tsconfig.json" }),
     terser(),
-    postcss(),
+    postcss({
+      autoModules: true,
+      plugins: [],
+    }),
   ],
-  external: ["react", "react-dom"],
+  external: ["react", "react-dom", /\.css$/g],
 };
 
 const typeOptions = {
   input: "src/index.ts",
   output: [{ file: packageJson.types, format: "es" }],
   plugins: [dts.default()],
-  external: [/\.css$/],
+  external: [/\.css$/g],
 };
 
 export default [moduleOptions, typeOptions];
