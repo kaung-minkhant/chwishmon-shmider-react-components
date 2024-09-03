@@ -1,0 +1,13 @@
+.simple-button {
+  border-radius: 0.4rem;
+  padding: 0.1rem 1.5rem;
+  background-color: white;
+  transition: all ease-in-out 0.5s;
+  cursor: pointer;
+}
+.simple-button:hover {
+  background-color: burlywood;
+}
+.simple-button:active {
+  background-color: brown;
+}
