@@ -6,7 +6,7 @@
   cursor: pointer;
 }
 .simple-button:hover {
-  background-color: burlywood;
+  background-color: pink;
 }
 .simple-button:active {
   background-color: brown;
