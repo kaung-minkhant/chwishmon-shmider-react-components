@@ -1,0 +1,23 @@
+{
+  "name": "chwishmon-shmider-react-components",
+  "version": "0.1.0",
+  "description": "React Components by Chwishmon-Shmider",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaung-minkhant/chwishmon-shmider-react-components.git"
+  },
+  "keywords": [
+    "React",
+    "Components"
+  ],
+  "author": "Kaung Min Khant",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/kaung-minkhant/chwishmon-shmider-react-components/issues"
+  },
+  "homepage": "https://github.com/kaung-minkhant/chwishmon-shmider-react-components#readme"
+}
