@@ -6,6 +6,8 @@ import terser from "@rollup/plugin-terser";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
 import autoprefixer from "autoprefixer";
+import alias from '@rollup/plugin-alias'
+import * as path from 'path'
 
 const packageJson = require("./package.json");
 
@@ -43,7 +45,14 @@ const moduleOptions = {
 const typeOptions = {
   input: "src/index.ts",
   output: [{ file: packageJson.types, format: "es" }],
-  plugins: [dts()],
+  plugins: [
+    alias({
+      entries:[
+        {find: "@", replacement: path.resolve(__dirname, "src")}
+      ] 
+    }),
+    dts(),
+  ],
   external: [/\.css$/u],
 };
 
