@@ -26,6 +26,7 @@ export function initAnimation(paths: NodeListOf<AnimatableSVGType>) {
 export function pathAnimation(path: SVGPathElement, resolve: any) {
   path.style.visibility = "visible";
   const interval = setInterval(() => {
+    // console.log("inside path animation");
     if (+path.style.strokeDashoffset < 0) {
       resolve("done");
       clearInterval(interval);
@@ -79,9 +80,11 @@ export function performAnimation(
 ) {
   setTimeout(() => {
     if (path instanceof SVGPathElement) {
+      // console.log("performing path animation");
       pathAnimation(path, resolve);
     }
     if (path instanceof SVGCircleElement) {
+      // console.log("performing circle animation");
       circleAnimation(path, resolve, config);
     }
   }, interval);
@@ -101,6 +104,7 @@ export async function animatePaths({
   const paths = document.querySelectorAll(
     `.${pathClass}`
   ) as NodeListOf<AnimatableSVGType>;
+  // console.log("paths", paths);
   initAnimation(paths);
   for (let path of paths) {
     await new Promise((resolve) =>
